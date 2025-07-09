@@ -1,0 +1,12 @@
+*Circuito grampeador
+v1 1 0 SIN(0 1 1kHz 0 0)
+C1 1 2 1F
+D1 0 2 D1N4148
+.model D1N4148 D(Is =1nA n=1)
+R1 0 2 10k
+.control 
+tran 10us 4ms
+plot v(2) 
+plot v(1)
+.endc
+.end
