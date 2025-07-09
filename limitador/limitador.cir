@@ -1,0 +1,12 @@
+*Circuito limitador
+v1 1 0 SIN(0 1 1kHz 0 0)
+R1 1 2 1k
+D1 0 2 D1N4148
+D2 2 0 D1N4148
+.model D1N4148 D(Is =1nA n=1)
+R2 2 0 1k
+.control 
+tran 10us 4ms
+plot v(2) v(1)
+.endc
+.end
