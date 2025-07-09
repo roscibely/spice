@@ -1,0 +1,10 @@
+*Retificador de meia onda
+v1 1 0 SIN(0 1 1kHz 0 0)
+D1 1 2 D1N4148
+.model D1N4148 D(Is =1nA n=1)
+R1 2 0 1k
+.control 
+tran 10us 4ms
+plot v(2)
+.endc
+.end
