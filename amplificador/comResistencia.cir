@@ -1,0 +1,19 @@
+*Amplificador com resistência
+vin1 4 0 dc 5V
+vin2 6 0 dc 0.7V
+vdd 1 0 dc 5V
+iss  3 0 dc 0.001A
+RD1 1 2 1k
+RD2 1 5 1k
+RSS 3 0 1k
+M1 2 4 3 3 n (W=1u L=1u)
+M2 5 6 3 3 n (W=1u L=1u)
+.model n NMOS(VTO=1 KP=0.25)
+.control 
+dc vin1 0 5V 1V
+dc vin2 0 1V 1V
+dc vdd  0 5V 1V
+dc iss  0 0.001A 0.0001A
+plot v(2)
+.endc
+.END 
